@@ -166,7 +166,7 @@ public:
   Value get(Key key) {
     // 首先尝试从主缓存获取数据
     Value value{};
-    bool inMainCache = KLruCache<Key, Value>::get(key, value);
+    bool inMainCache = WLruCache<Key, Value>::get(key, value);
 
     // 获取并更新访问历史计数
     size_t historyCount = historyList_->get(key);
